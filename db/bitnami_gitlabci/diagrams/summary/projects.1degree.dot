@@ -1,0 +1,47 @@
+// dot 2.38.0 on Mac OS X 10.9.4
+// SchemaSpy rev 590
+digraph "projects" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "projects" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">projects</TD></TR>
+      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
+      <TR><TD PORT="timeout" COLSPAN="3" ALIGN="LEFT">timeout</TD></TR>
+      <TR><TD PORT="scripts" COLSPAN="3" ALIGN="LEFT">scripts</TD></TR>
+      <TR><TD PORT="created_at" COLSPAN="3" ALIGN="LEFT">created_at</TD></TR>
+      <TR><TD PORT="updated_at" COLSPAN="3" ALIGN="LEFT">updated_at</TD></TR>
+      <TR><TD PORT="token" COLSPAN="3" ALIGN="LEFT">token</TD></TR>
+      <TR><TD PORT="default_ref" COLSPAN="3" ALIGN="LEFT">default_ref</TD></TR>
+      <TR><TD PORT="gitlab_url" COLSPAN="3" ALIGN="LEFT">gitlab_url</TD></TR>
+      <TR><TD PORT="always_build" COLSPAN="3" ALIGN="LEFT">always_build</TD></TR>
+      <TR><TD PORT="polling_interval" COLSPAN="3" ALIGN="LEFT">polling_interval</TD></TR>
+      <TR><TD PORT="public" COLSPAN="3" ALIGN="LEFT">public</TD></TR>
+      <TR><TD PORT="ssh_url_to_repo" COLSPAN="3" ALIGN="LEFT">ssh_url_to_repo</TD></TR>
+      <TR><TD PORT="gitlab_id" COLSPAN="3" ALIGN="LEFT">gitlab_id</TD></TR>
+      <TR><TD PORT="allow_git_fetch" COLSPAN="3" ALIGN="LEFT">allow_git_fetch</TD></TR>
+      <TR><TD PORT="email_recipients" COLSPAN="3" ALIGN="LEFT">email_recipients</TD></TR>
+      <TR><TD PORT="email_add_committer" COLSPAN="3" ALIGN="LEFT">email_add_committer</TD></TR>
+      <TR><TD PORT="email_only_broken_builds" COLSPAN="3" ALIGN="LEFT">email_only_broken_builds</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/projects.html"
+    tooltip="projects"
+  ];
+}

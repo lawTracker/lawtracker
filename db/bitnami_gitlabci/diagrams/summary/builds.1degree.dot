@@ -1,0 +1,43 @@
+// dot 2.38.0 on Mac OS X 10.9.4
+// SchemaSpy rev 590
+digraph "builds" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "builds" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">builds</TD></TR>
+      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="project_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">project_id</TD></TR>
+      <TR><TD PORT="ref" COLSPAN="3" ALIGN="LEFT">ref</TD></TR>
+      <TR><TD PORT="status" COLSPAN="3" ALIGN="LEFT">status</TD></TR>
+      <TR><TD PORT="finished_at" COLSPAN="3" ALIGN="LEFT">finished_at</TD></TR>
+      <TR><TD PORT="trace" COLSPAN="3" ALIGN="LEFT">trace</TD></TR>
+      <TR><TD PORT="created_at" COLSPAN="3" ALIGN="LEFT">created_at</TD></TR>
+      <TR><TD PORT="updated_at" COLSPAN="3" ALIGN="LEFT">updated_at</TD></TR>
+      <TR><TD PORT="sha" COLSPAN="3" ALIGN="LEFT">sha</TD></TR>
+      <TR><TD PORT="started_at" COLSPAN="3" ALIGN="LEFT">started_at</TD></TR>
+      <TR><TD PORT="tmp_file" COLSPAN="3" ALIGN="LEFT">tmp_file</TD></TR>
+      <TR><TD PORT="before_sha" COLSPAN="3" ALIGN="LEFT">before_sha</TD></TR>
+      <TR><TD PORT="push_data" COLSPAN="3" ALIGN="LEFT">push_data</TD></TR>
+      <TR><TD PORT="runner_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">runner_id</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/builds.html"
+    tooltip="builds"
+  ];
+}

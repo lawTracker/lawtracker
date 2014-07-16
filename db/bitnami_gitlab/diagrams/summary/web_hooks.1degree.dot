@@ -1,0 +1,40 @@
+// dot 2.38.0 on Mac OS X 10.9.4
+// SchemaSpy rev 590
+digraph "web_hooks" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "web_hooks" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">web_hooks</TD></TR>
+      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="url" COLSPAN="3" ALIGN="LEFT">url</TD></TR>
+      <TR><TD PORT="project_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">project_id</TD></TR>
+      <TR><TD PORT="created_at" COLSPAN="3" ALIGN="LEFT">created_at</TD></TR>
+      <TR><TD PORT="updated_at" COLSPAN="3" ALIGN="LEFT">updated_at</TD></TR>
+      <TR><TD PORT="type" COLSPAN="3" ALIGN="LEFT">type</TD></TR>
+      <TR><TD PORT="service_id" COLSPAN="3" ALIGN="LEFT">service_id</TD></TR>
+      <TR><TD PORT="push_events" COLSPAN="3" ALIGN="LEFT">push_events</TD></TR>
+      <TR><TD PORT="issues_events" COLSPAN="3" ALIGN="LEFT">issues_events</TD></TR>
+      <TR><TD PORT="merge_requests_events" COLSPAN="3" ALIGN="LEFT">merge_requests_events</TD></TR>
+      <TR><TD PORT="tag_push_events" COLSPAN="3" ALIGN="LEFT">tag_push_events</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/web_hooks.html"
+    tooltip="web_hooks"
+  ];
+}

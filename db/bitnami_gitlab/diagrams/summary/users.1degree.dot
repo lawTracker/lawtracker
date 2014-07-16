@@ -1,0 +1,71 @@
+// dot 2.38.0 on Mac OS X 10.9.4
+// SchemaSpy rev 590
+digraph "users" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "users" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">users</TD></TR>
+      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="email" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">email</TD></TR>
+      <TR><TD PORT="encrypted_password" COLSPAN="3" ALIGN="LEFT">encrypted_password</TD></TR>
+      <TR><TD PORT="reset_password_token" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">reset_password_token</TD></TR>
+      <TR><TD PORT="reset_password_sent_at" COLSPAN="3" ALIGN="LEFT">reset_password_sent_at</TD></TR>
+      <TR><TD PORT="remember_created_at" COLSPAN="3" ALIGN="LEFT">remember_created_at</TD></TR>
+      <TR><TD PORT="sign_in_count" COLSPAN="3" ALIGN="LEFT">sign_in_count</TD></TR>
+      <TR><TD PORT="current_sign_in_at" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">current_sign_in_at</TD></TR>
+      <TR><TD PORT="last_sign_in_at" COLSPAN="3" ALIGN="LEFT">last_sign_in_at</TD></TR>
+      <TR><TD PORT="current_sign_in_ip" COLSPAN="3" ALIGN="LEFT">current_sign_in_ip</TD></TR>
+      <TR><TD PORT="last_sign_in_ip" COLSPAN="3" ALIGN="LEFT">last_sign_in_ip</TD></TR>
+      <TR><TD PORT="created_at" COLSPAN="3" ALIGN="LEFT">created_at</TD></TR>
+      <TR><TD PORT="updated_at" COLSPAN="3" ALIGN="LEFT">updated_at</TD></TR>
+      <TR><TD PORT="name" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">name</TD></TR>
+      <TR><TD PORT="admin" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">admin</TD></TR>
+      <TR><TD PORT="projects_limit" COLSPAN="3" ALIGN="LEFT">projects_limit</TD></TR>
+      <TR><TD PORT="skype" COLSPAN="3" ALIGN="LEFT">skype</TD></TR>
+      <TR><TD PORT="linkedin" COLSPAN="3" ALIGN="LEFT">linkedin</TD></TR>
+      <TR><TD PORT="twitter" COLSPAN="3" ALIGN="LEFT">twitter</TD></TR>
+      <TR><TD PORT="authentication_token" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">authentication_token</TD></TR>
+      <TR><TD PORT="theme_id" COLSPAN="3" ALIGN="LEFT">theme_id</TD></TR>
+      <TR><TD PORT="bio" COLSPAN="3" ALIGN="LEFT">bio</TD></TR>
+      <TR><TD PORT="failed_attempts" COLSPAN="3" ALIGN="LEFT">failed_attempts</TD></TR>
+      <TR><TD PORT="locked_at" COLSPAN="3" ALIGN="LEFT">locked_at</TD></TR>
+      <TR><TD PORT="extern_uid" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">extern_uid</TD></TR>
+      <TR><TD PORT="provider" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">provider</TD></TR>
+      <TR><TD PORT="username" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">username</TD></TR>
+      <TR><TD PORT="can_create_group" COLSPAN="3" ALIGN="LEFT">can_create_group</TD></TR>
+      <TR><TD PORT="can_create_team" COLSPAN="3" ALIGN="LEFT">can_create_team</TD></TR>
+      <TR><TD PORT="state" COLSPAN="3" ALIGN="LEFT">state</TD></TR>
+      <TR><TD PORT="color_scheme_id" COLSPAN="3" ALIGN="LEFT">color_scheme_id</TD></TR>
+      <TR><TD PORT="notification_level" COLSPAN="3" ALIGN="LEFT">notification_level</TD></TR>
+      <TR><TD PORT="password_expires_at" COLSPAN="3" ALIGN="LEFT">password_expires_at</TD></TR>
+      <TR><TD PORT="created_by_id" COLSPAN="3" ALIGN="LEFT">created_by_id</TD></TR>
+      <TR><TD PORT="avatar" COLSPAN="3" ALIGN="LEFT">avatar</TD></TR>
+      <TR><TD PORT="confirmation_token" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">confirmation_token</TD></TR>
+      <TR><TD PORT="confirmed_at" COLSPAN="3" ALIGN="LEFT">confirmed_at</TD></TR>
+      <TR><TD PORT="confirmation_sent_at" COLSPAN="3" ALIGN="LEFT">confirmation_sent_at</TD></TR>
+      <TR><TD PORT="unconfirmed_email" COLSPAN="3" ALIGN="LEFT">unconfirmed_email</TD></TR>
+      <TR><TD PORT="hide_no_ssh_key" COLSPAN="3" ALIGN="LEFT">hide_no_ssh_key</TD></TR>
+      <TR><TD PORT="website_url" COLSPAN="3" ALIGN="LEFT">website_url</TD></TR>
+      <TR><TD PORT="last_credential_check_at" COLSPAN="3" ALIGN="LEFT">last_credential_check_at</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/users.html"
+    tooltip="users"
+  ];
+}

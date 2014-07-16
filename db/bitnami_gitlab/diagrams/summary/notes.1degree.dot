@@ -1,0 +1,42 @@
+// dot 2.38.0 on Mac OS X 10.9.4
+// SchemaSpy rev 590
+digraph "notes" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "notes" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">notes</TD></TR>
+      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="note" COLSPAN="3" ALIGN="LEFT">note</TD></TR>
+      <TR><TD PORT="noteable_type" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">noteable_type</TD></TR>
+      <TR><TD PORT="author_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">author_id</TD></TR>
+      <TR><TD PORT="created_at" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">created_at</TD></TR>
+      <TR><TD PORT="updated_at" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">updated_at</TD></TR>
+      <TR><TD PORT="project_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">project_id</TD></TR>
+      <TR><TD PORT="attachment" COLSPAN="3" ALIGN="LEFT">attachment</TD></TR>
+      <TR><TD PORT="line_code" COLSPAN="3" ALIGN="LEFT">line_code</TD></TR>
+      <TR><TD PORT="commit_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">commit_id</TD></TR>
+      <TR><TD PORT="noteable_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">noteable_id</TD></TR>
+      <TR><TD PORT="system" COLSPAN="3" ALIGN="LEFT">system</TD></TR>
+      <TR><TD PORT="st_diff" COLSPAN="3" ALIGN="LEFT">st_diff</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/notes.html"
+    tooltip="notes"
+  ];
+}
