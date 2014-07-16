@@ -1,0 +1,50 @@
+// dot 2.38.0 on Mac OS X 10.9.4
+// SchemaSpy rev 590
+digraph "projects" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "projects" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">projects</TD></TR>
+      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="name" COLSPAN="3" ALIGN="LEFT">name</TD></TR>
+      <TR><TD PORT="path" COLSPAN="3" ALIGN="LEFT">path</TD></TR>
+      <TR><TD PORT="description" COLSPAN="3" ALIGN="LEFT">description</TD></TR>
+      <TR><TD PORT="created_at" COLSPAN="3" ALIGN="LEFT">created_at</TD></TR>
+      <TR><TD PORT="updated_at" COLSPAN="3" ALIGN="LEFT">updated_at</TD></TR>
+      <TR><TD PORT="creator_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">creator_id</TD></TR>
+      <TR><TD PORT="issues_enabled" COLSPAN="3" ALIGN="LEFT">issues_enabled</TD></TR>
+      <TR><TD PORT="wall_enabled" COLSPAN="3" ALIGN="LEFT">wall_enabled</TD></TR>
+      <TR><TD PORT="merge_requests_enabled" COLSPAN="3" ALIGN="LEFT">merge_requests_enabled</TD></TR>
+      <TR><TD PORT="wiki_enabled" COLSPAN="3" ALIGN="LEFT">wiki_enabled</TD></TR>
+      <TR><TD PORT="namespace_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">namespace_id</TD></TR>
+      <TR><TD PORT="issues_tracker" COLSPAN="3" ALIGN="LEFT">issues_tracker</TD></TR>
+      <TR><TD PORT="issues_tracker_id" COLSPAN="3" ALIGN="LEFT">issues_tracker_id</TD></TR>
+      <TR><TD PORT="snippets_enabled" COLSPAN="3" ALIGN="LEFT">snippets_enabled</TD></TR>
+      <TR><TD PORT="last_activity_at" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">last_activity_at</TD></TR>
+      <TR><TD PORT="import_url" COLSPAN="3" ALIGN="LEFT">import_url</TD></TR>
+      <TR><TD PORT="visibility_level" COLSPAN="3" ALIGN="LEFT">visibility_level</TD></TR>
+      <TR><TD PORT="archived" COLSPAN="3" ALIGN="LEFT">archived</TD></TR>
+      <TR><TD PORT="import_status" COLSPAN="3" ALIGN="LEFT">import_status</TD></TR>
+      <TR><TD PORT="repository_size" COLSPAN="3" ALIGN="LEFT">repository_size</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/projects.html"
+    tooltip="projects"
+  ];
+}

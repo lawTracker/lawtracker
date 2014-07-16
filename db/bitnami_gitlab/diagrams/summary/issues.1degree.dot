@@ -1,0 +1,42 @@
+// dot 2.38.0 on Mac OS X 10.9.4
+// SchemaSpy rev 590
+digraph "issues" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "issues" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">issues</TD></TR>
+      <TR><TD PORT="id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">id</TD></TR>
+      <TR><TD PORT="title" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">title</TD></TR>
+      <TR><TD PORT="assignee_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">assignee_id</TD></TR>
+      <TR><TD PORT="author_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">author_id</TD></TR>
+      <TR><TD PORT="project_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">project_id</TD></TR>
+      <TR><TD PORT="created_at" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">created_at</TD></TR>
+      <TR><TD PORT="updated_at" COLSPAN="3" ALIGN="LEFT">updated_at</TD></TR>
+      <TR><TD PORT="position" COLSPAN="3" ALIGN="LEFT">position</TD></TR>
+      <TR><TD PORT="branch_name" COLSPAN="3" ALIGN="LEFT">branch_name</TD></TR>
+      <TR><TD PORT="description" COLSPAN="3" ALIGN="LEFT">description</TD></TR>
+      <TR><TD PORT="milestone_id" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">milestone_id</TD></TR>
+      <TR><TD PORT="state" COLSPAN="3" ALIGN="LEFT">state</TD></TR>
+      <TR><TD PORT="iid" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">iid</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/issues.html"
+    tooltip="issues"
+  ];
+}
