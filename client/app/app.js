@@ -1,12 +1,12 @@
 angular.module('lawtracker', [
-  'lawtracker.bill',
-  'lawtracker.bills',
+  // 'lawtracker.bill',
+  // 'lawtracker.bills',
   'lawtracker.auth',
-  'ngRoute'
+  // 'ngRoute'
 ])
 .config(function($routeProvider, $httpProvider) {
   $routeProvider
-    .when('/signin', {
+    .when('/auth', {
       templateUrl: 'app/auth/auth.html',
       controller: 'AuthController'
     })
