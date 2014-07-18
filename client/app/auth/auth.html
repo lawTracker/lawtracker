@@ -1,30 +1,37 @@
 
 <div class="container">
+  <div class="row">
+    <div class="col-xs-5">
 
-  <form class="form-signin" role="form" ng-submit="signin()">
-    <h2 class="form-signin-heading">Please sign in</h2>
-    <input type="email" ng-model="user.email" class="form-control" placeholder="Email address" required autofocus>
-    <input type="password" ng-model="user.password" class="form-control" placeholder="Password" required>
-<!-- will implement remember me chackbox later
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" ng-model="user.remember" value="remember-me"> Remember me
-      </label>
+      <form class="form-signin" role="form" ng-submit="signin()">
+        <h2 class="form-signin-heading">Sign In</h2>
+        <input type="email" ng-model="user.email" class="form-control" placeholder="Email address" required autofocus>
+        <input type="password" ng-model="user.password" class="form-control" placeholder="Password" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <!-- will implement remember me chackbox later
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-model="user.remember" value="remember-me"> Remember me
+              </label>
+            </div>
+          -->    
+      </form>
     </div>
+    <div class="col-xs-2"></div> <!-- there must be a better way -->
+    <div class="col-xs-5">
 
- -->    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  </form>
-
-  <form class="form-signin" role="form" ng-submit="signup()">
-    <h2 class="form-signin-heading">Please sign in</h2>
-    <input type="email" class="form-control" placeholder="Email address" required autofocus>
-    <input type="password" class="form-control" placeholder="Password" required>
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
+      <form class="form-signin" role="form" ng-submit="signup()">
+        <h2 class="form-signin-heading">Sign Up</h2>
+        <input type="email" class="form-control" placeholder="Email address" required autofocus>
+        <input type="password" class="form-control" placeholder="Password" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  </form>
+  </div>
 
 </div>
