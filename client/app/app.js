@@ -1,7 +1,6 @@
 angular.module('lawtracker', [
-  'lawtracker.bill',
-  'lawtracker.bills',
-  'lawtracker.auth',
+  'lawTrackerControllers',
+  // 'lawtracker.auth',
   'ngRoute'
 ])
 .config(function($routeProvider, $httpProvider) {
@@ -10,4 +9,12 @@ angular.module('lawtracker', [
       templateUrl: 'app/auth/auth.html',
       controller: 'AuthController'
     })
-})
+    .when('/bills/:billId', {
+      templateUrl: 'app/partials/bill-detail.html',
+      controller: 'BillDetailController'
+    })
+    .otherwise({
+      redirectTo: '/'
+    });
+});
+
