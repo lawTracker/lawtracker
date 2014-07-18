@@ -1,4 +1,4 @@
-angular.module('lawtracker.auth', [])
+angular.module('lawtracker.controllers', [])
 
 .controller('AuthController', function ($scope, $location) {
   $scope.user = {};
