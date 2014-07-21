@@ -1,6 +1,6 @@
-var lawTrackerServices = angular.module('lawtracker.services', []);
+angular.module('lawtracker.services', [])
 
-lawTrackerServices.factory('Repository', function($http) {
+.factory('Repository', function($http) {
   var createRepository = function(user, repoName) {
     return $http({
       method: 'POST',
