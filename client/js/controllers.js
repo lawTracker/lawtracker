@@ -1,8 +1,11 @@
-var lawTrackerControllers = angular.module('lawtracker.controllers', [
-  'lawtracker.services'
-]);
+var gitLabURL = 'http://bitnami-gitlab-b76b.cloudapp.net/api/v3/projects/'
+var privateToken = '?private_token=AGrAjazL79tTNqJLeABp'
 
-lawTrackerControllers.controller('AuthController', function ($scope, $location) {
+angular.module('lawtracker.controllers', [
+  'lawtracker.services'
+])
+
+.controller('AuthController', function ($scope, $location) {
   $scope.user = {};
 
   // add HR banner
@@ -28,40 +31,37 @@ lawTrackerControllers.controller('AuthController', function ($scope, $location) 
     $("#hrBanner").toggle()
     $location.path('/dashboard');
   };
-});
-
-lawTrackerControllers.controller('DashController', function ($scope, $http, $routeParams) {
+})
+.controller('DashController', function ($scope, $http, $routeParams) {
   $scope.userContributions = [];
   $scope.userBills = [];
-  $http.get('http://bitnami-gitlab-b76b.cloudapp.net/api/v3/projects/?private_token=AGrAjazL79tTNqJLeABp').success(function(data) {
+  $http.get(gitLabURL + privateToken).success(function(data) {
     console.log(data)
     $scope.userContributions = data;
     $scope.userBills = data;
   })
 
-});
-
-lawTrackerControllers.controller('BillDetailController', ['$scope', '$http', '$routeParams',
-  function($scope, $http, $routeParams) {
+})
+.controller('BillDetailController', function($scope, $http, $routeParams) {
     $scope.bill = {id: $routeParams.billId};
 
     $http.defaults.useXDomain = true;
     delete $http.defaults.headers.common['X-Requested-With'];
     // $http.defaults.headers.common.PRIVATE-TOKEN = 'AGrAjazL79tTNqJLeABp';
     // $httpProvider.defaults.headers.get = {'PRIVATE-TOKEN': 'AGrAjazL79tTNqJLeABp'};
-    $http.get('http://bitnami-gitlab-b76b.cloudapp.net/api/v3/projects/' + $routeParams.billId + '?private_token=AGrAjazL79tTNqJLeABp').success(function(data) {
+    $http.get(gitLabURL + $routeParams.billId + privateToken).success(function(data) {
       $scope.bill = data;
     })
     .error(function(err) {
       console.log(err)
     });
 
-    $http.get('http://bitnami-gitlab-b76b.cloudapp.net/api/v3/projects/' + $routeParams.billId + '/repository/tree?private_token=AGrAjazL79tTNqJLeABp').success(function(data) {
+    $http.get(gitLabURL + $routeParams.billId + '/repository/tree?private_token=AGrAjazL79tTNqJLeABp').success(function(data) {
       var repoTree = data;
       var repoSha = data[0].id;
       var fileName = data[0].name;
 
-      $http.get('http://bitnami-gitlab-b76b.cloudapp.net/api/v3/projects/' + $routeParams.billId + '/repository/raw_blobs/' + repoSha + '?private_token=AGrAjazL79tTNqJLeABp').success(function(data) {
+      $http.get(gitLabURL + $routeParams.billId + '/repository/raw_blobs/' + repoSha + privateToken).success(function(data) {
         $scope.bill.content = data;
       })
       .error(function(err) {
@@ -72,10 +72,8 @@ lawTrackerControllers.controller('BillDetailController', ['$scope', '$http', '$r
       console.log(err)
     });
 
-}]);
-
-lawTrackerControllers.controller('BillRevisionsController', ['$scope', '$http', '$routeParams',
-  function($scope, $http, $routeParams) {
+})
+.controller('BillRevisionsController', function($scope, $http, $routeParams) {
     $scope.bill = {id: $routeParams.billId};
     $scope.revisions = {};
 
@@ -83,30 +81,27 @@ lawTrackerControllers.controller('BillRevisionsController', ['$scope', '$http', 
 
     $scope.user = {username: 'user', id: 1};
 
-    $http.get('http://bitnami-gitlab-b76b.cloudapp.net/api/v3/projects/' + $routeParams.billId + '/repository/commits?private_token=AGrAjazL79tTNqJLeABp').success(function(data) {
+    $http.get(gitLabURL + $routeParams.billId + '/repository/commits?private_token=AGrAjazL79tTNqJLeABp').success(function(data) {
       $scope.revisions = data;
     })
     .error(function(err) {
       console.log(err)
     });
 
-}]);
-
-lawTrackerControllers.controller('ViewRevisionController', ['$scope', '$http', '$routeParams',
+})
+.controller('ViewRevisionController', 
   function($scope, $http, $routeParams) {
     $scope.bill = {id: $routeParams.billId};
 
-    $http.get('http://bitnami-gitlab-b76b.cloudapp.net/api/v3/projects/' + $routeParams.billId + '/repository/commits/' + $routeParams.sha + '/diff?private_token=AGrAjazL79tTNqJLeABp').success(function(data) {
+    $http.get(gitLabURL + $routeParams.billId + '/repository/commits/' + $routeParams.sha + '/diff?private_token=AGrAjazL79tTNqJLeABp').success(function(data) {
       $scope.bill.diff = data[0].diff;
     })
     .error(function(err) {
       console.log(err)
     });
 
-}]);
-
-lawTrackerControllers.controller('CreateBillController', ['$scope', '$http', '$routeParams', 'Repository',
-  function($scope, $http, $routeParams, Repository) {
+})
+.controller('CreateBillController', function($scope, $http, $routeParams, Repository) {
     $scope.bill = {};
     // Hardcode this for now...once we get login working we should know who
     // the user is and be able to access info via the api endpoint
@@ -127,15 +122,13 @@ lawTrackerControllers.controller('CreateBillController', ['$scope', '$http', '$r
 
     $scope.reset();
 
-}]);
-
-lawTrackerControllers.controller('EditBillController', ['$scope', '$http', '$routeParams',
-  function($scope, $http, $routeParams) {
+})
+.controller('EditBillController', function($scope, $http, $routeParams) {
     $scope.bill = {};
     // Hardcode this for now...once we get login working we should know who
     // the user is and be able to access info via the api endpoint
     $scope.user = {username: 'user', id: 1};
-    $http.get('http://bitnami-gitlab-b76b.cloudapp.net/api/v3/projects/' + $routeParams.billId + '?private_token=AGrAjazL79tTNqJLeABp').success(function(data) {
+    $http.get(gitLabURL + $routeParams.billId + privateToken).success(function(data) {
       // console.log(data);
       $scope.bill.id = data.id;
       $scope.bill.description = data.description;
@@ -144,12 +137,12 @@ lawTrackerControllers.controller('EditBillController', ['$scope', '$http', '$rou
       console.log(err)
     });
 
-    $http.get('http://bitnami-gitlab-b76b.cloudapp.net/api/v3/projects/' + $routeParams.billId + '/repository/tree?private_token=AGrAjazL79tTNqJLeABp').success(function(data) {
+    $http.get(gitLabURL + $routeParams.billId + '/repository/tree' + privateToken).success(function(data) {
       var repoTree = data;
       var repoSha = data[0].id;
       var fileName = data[0].name;
 
-      $http.get('http://bitnami-gitlab-b76b.cloudapp.net/api/v3/projects/' + $routeParams.billId + '/repository/raw_blobs/' + repoSha + '?private_token=AGrAjazL79tTNqJLeABp').success(function(data) {
+      $http.get(gitLabURL + $routeParams.billId + '/repository/raw_blobs/' + repoSha + privateToken).success(function(data) {
         $scope.bill.content = data;
       })
       .error(function(err) {
@@ -170,7 +163,7 @@ lawTrackerControllers.controller('EditBillController', ['$scope', '$http', '$rou
       $scope.bill = angular.copy($scope.master);
     };
 
-}]);
+});
 
 // Kanged from https://stackoverflow.com/a/2919363
 // function nl2br (str, is_xhtml) {
