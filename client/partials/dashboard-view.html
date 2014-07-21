@@ -31,7 +31,7 @@
 <div class="container">
   <div class="row" id="gray">
     <div class="col-sm-8" id="top-section">
-      <a href="user1010/interesting-bill">Home/user1010</a><br>
+      <a href="#">Home/user1010</a><br>
     </div>
   </div>
 </div><!-- End Top Secion -->
@@ -41,11 +41,11 @@
   <div class="col-sm-7"id="dashboard-body">
     <h2>Contributions</h2>
     <ul id="dashboard-body">
-      <li class="contribution" ng-repeat="contrib in userContributions">{{ contrib }}</li>
+      <li class="contribution" ng-repeat="contrib in userContributions"><a href="#/bills/{{contrib.billId}}">{{ contrib.text }}</a></li>
     </ul>
     <h2> Bills </h2>
     <ul id="dashboard-body">
-      <li class="userBill" ng-repeat="userBill in userBills">{{ userBill }}</li>
+      <li class="userBill" ng-repeat="userBill in userBills"><a href="#/bills/{{userBill.billId}}">{{ userBill.text }}</a></li>
     </ul>
   </div>
   <div class="col-sm-5">
