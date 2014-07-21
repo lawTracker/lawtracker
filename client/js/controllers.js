@@ -5,19 +5,18 @@ lawTrackerControllers.controller('AuthController', function ($scope, $location) 
 
   $scope.signin = function () {
     console.log($scope.user) //sign in through git lab here
-    $location.path('/bills');
+    $location.path('/dashboard');
   };
 
   $scope.signup = function () {
     console.log($scope.user) //sign up through git lab here
 
-    $location.path('/bills');
+    $location.path('/dashboard');
   };
 });
 
 lawTrackerControllers.controller('DashController', function ($scope, $location) {
 });
-
 
 lawTrackerControllers.controller('BillDetailController', ['$scope', '$http', '$routeParams',
   function($scope, $http, $routeParams) {
