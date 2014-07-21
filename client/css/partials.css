@@ -1,0 +1,23 @@
+body {
+  margin-top: 60px;
+}
+
+#dashboard-body {
+  background-color: #CCCCCC;
+}
+
+#top-section a {
+  font-size: 26px;
+}
+
+#section-table {
+  margin-right: 0;
+  margin-left: 0;
+  background-color: #fff;
+  border-color: #ddd;
+  border-width: 10px;
+  border-radius: 4px 4px 0 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
