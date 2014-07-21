@@ -79,6 +79,19 @@ lawTrackerControllers.controller('BillRevisionsController', ['$scope', '$http', 
 
 }]);
 
+lawTrackerControllers.controller('ViewRevisionController', ['$scope', '$http', '$routeParams',
+  function($scope, $http, $routeParams) {
+    $scope.bill = {id: $routeParams.billId};
+
+    $http.get('http://bitnami-gitlab-b76b.cloudapp.net/api/v3/projects/' + $routeParams.billId + '/repository/commits/' + $routeParams.sha + '/diff?private_token=AGrAjazL79tTNqJLeABp').success(function(data) {
+      $scope.bill.diff = data[0].diff;
+    })
+    .error(function(err) {
+      console.log(err)
+    });
+
+}]);
+
 lawTrackerControllers.controller('CreateBillController', ['$scope', '$http', '$routeParams', 'Repository',
   function($scope, $http, $routeParams, Repository) {
     $scope.bill = {};
