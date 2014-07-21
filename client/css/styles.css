@@ -2,6 +2,13 @@ body {
   margin-top: 60px;
 }
 
+#jumbo-top {
+  margin-top: 2%;
+}
+
+#jumbo-top h1 {
+  text-align: center;
+}
 #dashboard-body {
   background-color: #CCCCCC;
   border-radius: 6px;

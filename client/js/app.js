@@ -32,6 +32,10 @@ angular.module('lawtracker', [
       templateUrl: 'partials/bill-detail.html',
       controller: 'BillDetailController'
     })
+     .when('/about', {
+      templateUrl: 'partials/about-view.html',
+      controller: 'DashController'
+    })
     .otherwise({
       redirectTo: '/auth'
     });
