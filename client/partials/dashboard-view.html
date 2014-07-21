@@ -41,11 +41,11 @@
   <div class="col-sm-7"id="dashboard-body">
     <h2>Contributions</h2>
     <ul id="dashboard-body">
-      <li class="contribution" ng-repeat="contrib in userContributions"><a href="#/bills/{{contrib.billId}}">{{ contrib.text }}</a></li>
+      <li class="contribution" ng-repeat="contrib in userContributions"><a href="#/bills/{{contrib.id}}">{{ contrib.description }}</a></li>
     </ul>
     <h2> Bills </h2>
     <ul id="dashboard-body">
-      <li class="userBill" ng-repeat="userBill in userBills"><a href="#/bills/{{userBill.billId}}">{{ userBill.text }}</a></li>
+      <li class="userBill" ng-repeat="userBill in userBills"><a href="#/bills/{{userBill.id}}">{{ userBill.description }}</a></li>
     </ul>
   </div>
   <div class="col-sm-5">
