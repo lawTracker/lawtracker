@@ -27,8 +27,8 @@
 </nav>
 
   <div class="container" ng-controller="BillDetailController">
-    <div class="row">
-      <div class="col-md-9">
+    <div class="row" id="gray">
+      <div class="col-md-10">
         <! -- main content -->
 <h2>{{bill.description}}</h2>
 <p>
@@ -36,14 +36,14 @@
 </p>
 
     </div>
-      <div class="col-md-3">
+      <div class="col-md-1">
         <!-- sidbar content -->
         <ul class="nav nav-pills nav-stacked">
             <li>
                 <a href="/wireframes/fork.html">Fork</a>
             </li>
             <li>
-                <a href="/wireframes/edit.html">Edit</a>
+                <a href="/#/bills/{{bill.id}}/edit">Edit</a>
             </li>
             <li>
                 <a href="/wireframes/settings.html">Settings</a>
