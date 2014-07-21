@@ -63,6 +63,7 @@ lawTrackerControllers.controller('BillDetailController', ['$scope', '$http', '$r
 
 lawTrackerControllers.controller('BillRevisionsController', ['$scope', '$http', '$routeParams',
   function($scope, $http, $routeParams) {
+    $scope.bill = {id: $routeParams.billId};
     $scope.revisions = {};
 
     // TODO: Pass in the user dynamically
