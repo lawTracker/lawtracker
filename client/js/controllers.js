@@ -15,7 +15,20 @@ lawTrackerControllers.controller('AuthController', function ($scope, $location) 
   };
 });
 
-lawTrackerControllers.controller('DashController', function ($scope, $location) {
+lawTrackerControllers.controller('DashController', function ($scope) {
+  $scope.userBills = {};
+  $scope.userContributions = [
+    "Contribution 1:  Commit 1200830: 09/09/2015",
+    "Contribution 1:  Commit 1200831: 09/09/2015",
+    "Contribution 1:  Commit 1200832: 09/09/2015"
+  ];
+  $scope.userBills = [
+    "Bill 1:  A resolution to fix everything: 09/09/2015",
+    "Bill 2: Save our puppies act: 09/09/2015",
+    "Bill 3: Team America act:  09/09/2015"
+  ];
+
+
 });
 
 lawTrackerControllers.controller('BillDetailController', ['$scope', '$http', '$routeParams',
