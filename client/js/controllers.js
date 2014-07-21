@@ -8,7 +8,7 @@ lawTrackerControllers.controller('AuthController', function ($scope, $location) 
   // add HR banner
   $scope.$on('$viewContentLoaded', function(){
     $('body').append(
-      '<a href="http://hackreactor.com"> \
+      '<a id="hrBanner" href="http://hackreactor.com"> \
       <img style="position: fixed; top: 0; right: 0; border: 0;" \
       src="http://i.imgur.com/x86kKmF.png" \
       alt="Built at Hack Reactor"> \
@@ -18,12 +18,14 @@ lawTrackerControllers.controller('AuthController', function ($scope, $location) 
 
   $scope.signin = function () {
     console.log($scope.user) //sign in through git lab here
+    $("#hrBanner").toggle()
     $location.path('/dashboard');
+
   };
 
   $scope.signup = function () {
     console.log($scope.user) //sign up through git lab here
-
+    $("#hrBanner").toggle()
     $location.path('/dashboard');
   };
 });

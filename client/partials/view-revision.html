@@ -1,53 +1,53 @@
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-            <a class="navbar-brand" href="index.html">LawTracker</a>
-      </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="#about">About</a>
-          </li>
-          <li><a href="#services">My Profile</a>
-          </li>
-          <li><a href="#contact">Help</a>
-          </li>
-        </ul>
-      </div>
-        <!-- /.navbar-collapse -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#/dashboard">LawTracker</a>
     </div>
-    <!-- /.container -->
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="#about">About</a>
+        </li>
+        <li><a href="#/dashboard">My Profile</a>
+        </li>
+        <li><a href="#contact">Help</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
 </nav>
 
-  <div class="container" ng-controller="ViewRevisionController">
-    <div class="row" id="gray">
-      <div class="col-md-10">
-        <! -- main content -->
-<p>
-    <pre>{{bill.diff}}</pre>
-</p>
+<div class="container" ng-controller="ViewRevisionController">
+  <div class="row" id="gray">
+    <div class="col-md-10">
+      <! -- main content -->
+      <p>
+        <pre>{{bill.diff}}</pre>
+      </p>
 
     </div>
-      <div class="col-md-1">
-        <!-- sidbar content -->
-        <ul class="nav nav-pills nav-stacked">
-            <li>
-                <a href="/wireframes/fork.html">Fork</a>
-            </li>
-            <li>
-                <a href="/#/bills/{{bill.id}}/edit">Edit</a>
-            </li>
-            <li>
-                <a href="/#/bills/{{bill.id}}/revisions">Revisions</a>
-            </li>
-        </ul>
+    <div class="col-md-2">
+      <!-- sidbar content -->
+      <ul class="nav nav-pills nav-stacked">
+        <li>
+          <a href="/wireframes/fork.html">Fork</a>
+        </li>
+        <li>
+          <a href="/#/bills/{{bill.id}}/edit">Edit</a>
+        </li>
+        <li>
+          <a href="/#/bills/{{bill.id}}/revisions">Revisions</a>
+        </li>
+      </ul>
 
-      </div>
     </div>
+  </div>
