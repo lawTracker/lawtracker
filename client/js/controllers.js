@@ -36,6 +36,8 @@ lawTrackerControllers.controller('DashController', function ($scope, $http, $rou
 
 lawTrackerControllers.controller('BillDetailController', ['$scope', '$http', '$routeParams',
   function($scope, $http, $routeParams) {
+    $scope.bill = {id: $routeParams.billId};
+
     $http.defaults.useXDomain = true;
     delete $http.defaults.headers.common['X-Requested-With'];
     // $http.defaults.headers.common.PRIVATE-TOKEN = 'AGrAjazL79tTNqJLeABp';

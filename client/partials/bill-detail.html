@@ -1,15 +1,4 @@
-<!doctype html>
-<html lang="en" ng-app="lawtracker">
-<head>
-  <meta charset="utf-8">
-  <title>lawTracker</title>
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-  <script src="bower_components/angular/angular.min.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/angular-resource/angular-resource.js"></script>
-  <script src="js/controllers.js"></script>
-</head>
-<body ng-controller="BillDetailController">
+<div ng-controller="BillDetailController">
     <nav class="navbar navbar-default" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -40,7 +29,7 @@
                 <a href="/wireframes/fork.html">Fork</a>
             </li>
             <li>
-                <a href="/wireframes/edit.html">Edit</a>
+                <a href="#/bills/{{bill.id}}/edit">Edit</a>
             </li>
             <li>
                 <a href="/wireframes/settings.html">Settings</a>
@@ -50,5 +39,4 @@
       </div>
     </div>
   </div>
-</body>
-</html>
+</div>
