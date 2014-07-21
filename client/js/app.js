@@ -21,6 +21,6 @@ angular.module('lawtracker', [
       controller: 'BillDetailController'
     })
     .otherwise({
-      redirectTo: '/'
+      redirectTo: '/auth'
     });
 });
