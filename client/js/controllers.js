@@ -56,13 +56,13 @@ lawTrackerControllers.controller('CreateBillController', ['$scope', '$http', '$r
     $scope.user = {username: 'user', id: 1};
     // we'll take the filename from the form, sanitize it, and use it for
     // creating the repo
-    $scope.repositoryName = "tempreponame";
 
     $scope.master = $scope.bill;
 
-    $scope.update = function(bill) {
+    $scope.create = function(bill) {
+      console.log("Calling update");
       $scope.master = angular.copy(bill);
-      Repository.createRepository($scope.user, $scope.repositoryName);
+      Repository.createRepository($scope.user, $scope.bill.filename);
     };
 
     $scope.reset = function() {
