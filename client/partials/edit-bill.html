@@ -28,25 +28,25 @@
 
 <div class="container" ng-controller="EditBillController">
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-10">
       <form novalidate class="edit-bill-form">
         Description: <input type="text" ng-model="bill.description" /><br />
         Content:<br />
-        <textarea ng-model="bill.content" cols="170" rows="50"></textarea>
+        <textarea ng-model="bill.content" cols="150" rows="50"></textarea>
         <button ng-click="reset()">RESET</button>
         <button ng-click="update(bill)">SAVE</button>
       </form>
       <! -- main content -->
       <pre>{{bill.content}}</pre>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-1">
       <!-- sidbar content -->
       <ul class="nav nav-pills nav-stacked">
         <li>
           <a href="/wireframes/fork.html">Fork</a>
         </li>
         <li>
-          <a href="/wireframes/edit.html">Edit</a>
+          <a href="/#/bills/{{bill.id}}">View</a>
         </li>
         <li>
           <a href="/wireframes/settings.html">Settings</a>
