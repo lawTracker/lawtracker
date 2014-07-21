@@ -61,6 +61,23 @@ lawTrackerControllers.controller('BillDetailController', ['$scope', '$http', '$r
 
 }]);
 
+lawTrackerControllers.controller('BillRevisionsController', ['$scope', '$http', '$routeParams',
+  function($scope, $http, $routeParams) {
+    $scope.revisions = {};
+
+    // TODO: Pass in the user dynamically
+
+    $scope.user = {username: 'user', id: 1};
+
+    $http.get('http://bitnami-gitlab-b76b.cloudapp.net/api/v3/projects/' + $routeParams.billId + '/repository/commits?private_token=AGrAjazL79tTNqJLeABp').success(function(data) {
+      $scope.revisions = data;
+    })
+    .error(function(err) {
+      console.log(err)
+    });
+
+}]);
+
 lawTrackerControllers.controller('CreateBillController', ['$scope', '$http', '$routeParams', 'Repository',
   function($scope, $http, $routeParams, Repository) {
     $scope.bill = {};
