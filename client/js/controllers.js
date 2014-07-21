@@ -37,23 +37,18 @@ angular.module('lawtracker.controllers', [
   $scope.userBills = [];
   $http.get(gitLabURL + privateToken).success(function(data) {
     $scope.userBills = data;
-    for (var i=0; i<$scope.userBills.length; i++){
-      var name = $scope.userBills[i].name
-      var id = $scope.userBills[i].id
-      $http.get(gitLabURL + id + '/repository/commits' + privateToken).success(function(commits) {
-        for (var j=0; j<commits.length; j++){
-          var commit = commits[j]
-          var commitStr = name + " - " + commit.title +  " (" + commit.created_at + ")";
-          console.log(commit)
-          if ($scope.userContributions.length < 4) {
-            $scope.userContributions.push({text: commitStr, billId: id, contribId: commit.id});
-          }
+    var name = $scope.userBills[0].name
+    var id = $scope.userBills[0].id
+    $http.get(gitLabURL + id + '/repository/commits' + privateToken).success(function(commits) {
+      for (var j=0; j<commits.length; j++){
+        var commit = commits[j]
+        var commitStr = name + " - " + commit.title +  " (" + commit.created_at + ")";
+        if ($scope.userContributions.length < 4) {
+          $scope.userContributions.push({text: commitStr, billId: id, contribId: commit.id});
         }
-      })
-    }
+      }
+    })
   })
-
-
 })
 .controller('BillDetailController', function($scope, $http, $routeParams) {
     $scope.bill = {id: $routeParams.billId};
