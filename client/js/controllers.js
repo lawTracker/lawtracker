@@ -16,19 +16,21 @@ lawTrackerControllers.controller('AuthController', function ($scope, $location) 
 });
 
 lawTrackerControllers.controller('DashController', function ($scope, $http, $routeParams) {
-  $http.get('http://bitnami-gitlab-b76b.cloudapp.net/api/v3/projects/is_xhtml?private_token=AGrAjazL79tTNqJLeABp').success(function(data) {
-    console.log(data);
+  $scope.userContributions = [];
+  $scope.userBills = [];
+  $http.get('http://bitnami-gitlab-b76b.cloudapp.net/api/v3/projects/?private_token=AGrAjazL79tTNqJLeABp').success(function(data) {
+    console.log(data)
+    $scope.userContributions = [
+      {text: "Contribution 1:  Commit 1200830: 09/09/2015", billId: 1, commitId: 3},
+      {text: "Contribution 2:  Commit 1200831: 09/09/2015", billId: 1, commitId: 2},
+      {text: "Contribution 3:  Commit 1200832: 09/09/2015", billId: 1, commitId: 1}
+    ];
+    $scope.userBills = [
+      {text: "Bill 1:  A resolution to fix everything: 09/09/2015", billId: 1},
+      {text: "Bill 2: Save our puppies act: 09/09/2015", billId: 2},
+      {text: "Bill 3: Team America act:  09/09/2015", billId: 3},
+    ];
   })
-  $scope.userContributions = [
-    {text: "Contribution 1:  Commit 1200830: 09/09/2015", billId: 1, commitId: 3},
-    {text: "Contribution 1:  Commit 1200831: 09/09/2015", billId: 1, commitId: 2},
-    {text: "Contribution 1:  Commit 1200832: 09/09/2015", billId: 1, commitId: 1}
-  ];
-  $scope.userBills = [
-    {text: "Bill 1:  A resolution to fix everything: 09/09/2015", billId: 1},
-    {text: "Bill 2: Save our puppies act: 09/09/2015", billId: 2},
-    {text: "Bill 3: Team America act:  09/09/2015", billId: 3},
-  ];
 
 });
 
