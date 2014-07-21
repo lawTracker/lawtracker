@@ -20,6 +20,10 @@ angular.module('lawtracker', [
       templateUrl: 'partials/edit-bill.html',
       controller: 'EditBillController'
     })
+    .when('/bills/:billId/revisions', {
+      templateUrl: 'partials/bill-revisions.html',
+      controller: 'BillRevisionsController'
+    })
     .when('/bills/:billId', {
       templateUrl: 'partials/bill-detail.html',
       controller: 'BillDetailController'
