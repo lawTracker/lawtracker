@@ -8,17 +8,6 @@ angular.module('lawtracker.controllers', [
 .controller('AuthController', function ($scope, $location) {
   $scope.user = {};
 
-  // add HR banner
-  $scope.$on('$viewContentLoaded', function(){
-    $('body').append(
-      '<a id="hrBanner" href="http://hackreactor.com"> \
-      <img style="position: fixed; top: 0; right: 0; border: 0;" \
-      src="http://i.imgur.com/x86kKmF.png" \
-      alt="Built at Hack Reactor"> \
-      </a>'
-    );
-  });
-
   $scope.signin = function () {
     console.log($scope.user) //sign in through git lab here
     $("#hrBanner").toggle()
