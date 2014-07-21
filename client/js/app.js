@@ -8,6 +8,10 @@ angular.module('lawtracker', [
       templateUrl: 'partials/auth-view.html',
       controller: 'AuthController'
     })
+    .when('/bills/create', {
+      templateUrl: 'partials/create-bill.html',
+      controller: 'CreateBillController'
+    })
     .when('/bills/:billId/edit', {
       templateUrl: 'partials/edit-bill.html',
       controller: 'EditBillController'
