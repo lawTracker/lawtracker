@@ -41,7 +41,6 @@
   before it becomes a law.  Additionally, citizens will be able to use our convenient web 
   interface to propose changes to laws and to propose their own legislation.    
 
-## Quote from You ##
   "LawTracker use sophisticated, open-source software tools to track changes made to 
   proposed bills in the legislative lifecycle, as well as propose improvements to pending
   bills. It will empower citizens by bringing greatly needed transparency to the process
@@ -52,10 +51,10 @@
   bills and the software will automatically keep track of all changes made to the 
   legislation.  Collaborators can propose changes to any bill and propose their own 
   legislation based on another bill.  
-## Customer Quote ##
+
   "As an activist, I've found Law Tracker to be an invaluable tool for understanding how pending
   legislation will affect climate change.  --Jimmy Smith, environmental activist
 
-## Closing and Call to Action ##
+## Get involved ##
   LawTracker will help bring collaboration and transparency to the legislative process.  
   Sign up now or email us to ask how you can get involved.  
