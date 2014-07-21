@@ -145,7 +145,7 @@ lawTrackerControllers.controller('EditBillController', ['$scope', '$http', '$rou
     $http.get('http://bitnami-gitlab-b76b.cloudapp.net/api/v3/projects/' + $routeParams.billId + '/repository/tree?private_token=AGrAjazL79tTNqJLeABp').success(function(data) {
       var repoTree = data;
       var repoSha = data[0].id;
-      var fileName = data[0].name;
+      $scope.bill.fileName = data[0].name;
 
       $http.get('http://bitnami-gitlab-b76b.cloudapp.net/api/v3/projects/' + $routeParams.billId + '/repository/raw_blobs/' + repoSha + '?private_token=AGrAjazL79tTNqJLeABp').success(function(data) {
         $scope.bill.content = data;
@@ -161,7 +161,18 @@ lawTrackerControllers.controller('EditBillController', ['$scope', '$http', '$rou
     $scope.master = $scope.bill;
 
     $scope.update = function(bill) {
+      var file_path, branch_name, content, commit_message;
+      var commitMsg = bill.commitMsg || "Updated at " + Date.now();
+
+      $http.put('http://bitnami-gitlab-b76b.cloudapp.net/api/v3/projects/' + bill.id + '/repository/files?private_token=AGrAjazL79tTNqJLeABp', {'id': $scope.bill.id, 'content': $scope.bill.content, 'file_path': $scope.bill.fileName, 'branch_name': 'master', 'commit_message': commitMsg}).success(function(data) {
+        console.log("here's what we got back after trying to edit the file via the web api");
+        console.log(data);
+
       $scope.master = angular.copy(bill);
+      }).error(function(err) {
+        console.log("got an error when trying to update the bill");
+        console.log(err);
+      });
     };
 
     $scope.reset = function() {
