@@ -60,7 +60,6 @@ lawTrackerControllers.controller('CreateBillController', ['$scope', '$http', '$r
     $scope.master = $scope.bill;
 
     $scope.create = function(bill) {
-      console.log("Calling update");
       $scope.master = angular.copy(bill);
       Repository.createRepository($scope.user, $scope.bill.filename);
     };
