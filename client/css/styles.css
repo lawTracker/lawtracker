@@ -4,6 +4,7 @@ body {
 
 #dashboard-body {
   background-color: #CCCCCC;
+  border-radius: 6px;
 }
 
 #top-section a {
@@ -21,3 +22,7 @@ body {
   box-shadow: none;
 }
 
+#username-link {
+  padding: 10px;
+  margin-bottom: 20px;
+}
