@@ -1,4 +1,6 @@
-var lawTrackerControllers = angular.module('lawtracker.controllers', []);
+var lawTrackerControllers = angular.module('lawtracker.controllers', [
+  'lawtracker.services'
+]);
 
 lawTrackerControllers.controller('AuthController', function ($scope, $location) {
   $scope.user = {};
@@ -59,12 +61,38 @@ lawTrackerControllers.controller('BillDetailController', ['$scope', '$http', '$r
 
 }]);
 
+lawTrackerControllers.controller('CreateBillController', ['$scope', '$http', '$routeParams', 'Repository',
+  function($scope, $http, $routeParams, Repository) {
+    $scope.bill = {};
+    // Hardcode this for now...once we get login working we should know who
+    // the user is and be able to access info via the api endpoint
+    $scope.user = {username: 'user', id: 1};
+    // we'll take the filename from the form, sanitize it, and use it for
+    // creating the repo
+
+    $scope.master = $scope.bill;
+
+    $scope.create = function(bill) {
+      $scope.master = angular.copy(bill);
+      Repository.createRepository($scope.user, $scope.bill.filename);
+    };
+
+    $scope.reset = function() {
+      $scope.bill = angular.copy($scope.master);
+    };
+
+    $scope.reset();
+
+}]);
+
 lawTrackerControllers.controller('EditBillController', ['$scope', '$http', '$routeParams',
   function($scope, $http, $routeParams) {
     $scope.bill = {};
-
+    // Hardcode this for now...once we get login working we should know who
+    // the user is and be able to access info via the api endpoint
+    $scope.user = {username: 'user', id: 1};
     $http.get('http://bitnami-gitlab-b76b.cloudapp.net/api/v3/projects/' + $routeParams.billId + '?private_token=AGrAjazL79tTNqJLeABp').success(function(data) {
-      console.log(data);
+      // console.log(data);
       $scope.bill.id = data.id;
       $scope.bill.description = data.description;
     })
