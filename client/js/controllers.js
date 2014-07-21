@@ -56,7 +56,7 @@ angular.module('lawtracker.controllers', [
       console.log(err)
     });
 
-    $http.get(gitLabURL + $routeParams.billId + '/repository/tree?private_token=AGrAjazL79tTNqJLeABp').success(function(data) {
+    $http.get(gitLabURL + $routeParams.billId + '/repository/tree' + privateToken).success(function(data) {
       var repoTree = data;
       var repoSha = data[0].id;
       var fileName = data[0].name;
@@ -81,7 +81,7 @@ angular.module('lawtracker.controllers', [
 
     $scope.user = {username: 'user', id: 1};
 
-    $http.get(gitLabURL + $routeParams.billId + '/repository/commits?private_token=AGrAjazL79tTNqJLeABp').success(function(data) {
+    $http.get(gitLabURL + $routeParams.billId + '/repository/commits' + privateToken).success(function(data) {
       $scope.revisions = data;
     })
     .error(function(err) {
@@ -93,7 +93,7 @@ angular.module('lawtracker.controllers', [
   function($scope, $http, $routeParams) {
     $scope.bill = {id: $routeParams.billId};
 
-    $http.get(gitLabURL + $routeParams.billId + '/repository/commits/' + $routeParams.sha + '/diff?private_token=AGrAjazL79tTNqJLeABp').success(function(data) {
+    $http.get(gitLabURL + $routeParams.billId + '/repository/commits/' + $routeParams.sha + '/diff' + privateToken).success(function(data) {
       $scope.bill.diff = data[0].diff;
     })
     .error(function(err) {
@@ -159,7 +159,7 @@ angular.module('lawtracker.controllers', [
       var file_path, branch_name, content, commit_message;
       var commitMsg = bill.commitMsg || "Updated at " + Date.now();
 
-      $http.put('http://bitnami-gitlab-b76b.cloudapp.net/api/v3/projects/' + bill.id + '/repository/files?private_token=AGrAjazL79tTNqJLeABp', {'id': $scope.bill.id, 'content': $scope.bill.content, 'file_path': $scope.bill.fileName, 'branch_name': 'master', 'commit_message': commitMsg}).success(function(data) {
+      $http.put(gitLabURL + bill.id + '/repository/files' + privateToken, {'id': $scope.bill.id, 'content': $scope.bill.content, 'file_path': $scope.bill.fileName, 'branch_name': 'master', 'commit_message': commitMsg}).success(function(data) {
         console.log("here's what we got back after trying to edit the file via the web api");
         console.log(data);
 
