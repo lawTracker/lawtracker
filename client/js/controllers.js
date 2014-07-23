@@ -2,7 +2,8 @@ var gitLabURL = 'http://bitnami-gitlab-b76b.cloudapp.net/api/v3/projects/'
 var privateToken = '?private_token=AGrAjazL79tTNqJLeABp'
 
 angular.module('lawtracker.controllers', [
-  'lawtracker.services'
+  'lawtracker.services',
+  'hljs'
 ])
 
 .controller('AuthController', function ($scope, $location) {
@@ -89,7 +90,6 @@ angular.module('lawtracker.controllers', [
 .controller('ViewRevisionController', 
   function($scope, $http, $routeParams) {
     $scope.bill = {id: $routeParams.billId};
-
     $http.get(gitLabURL + $routeParams.billId + '/repository/commits/' + $routeParams.sha + '/diff' + privateToken).success(function(data) {
       $scope.bill.diff = data[0].diff;
     })
