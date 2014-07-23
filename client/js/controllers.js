@@ -86,15 +86,31 @@ angular.module('lawtracker.controllers', [
     });
 
 })
-.controller('ViewRevisionController', 
+.controller('ViewRevisionController',
   function($scope, $http, $routeParams) {
     $scope.bill = {id: $routeParams.billId};
 
+    // Get the commit diff info
     $http.get(gitLabURL + $routeParams.billId + '/repository/commits/' + $routeParams.sha + '/diff' + privateToken).success(function(data) {
       $scope.bill.diff = data[0].diff;
     })
     .error(function(err) {
       console.log(err)
+    });
+
+    // get the file path
+    $http.get(gitLabURL + $routeParams.billId + '/repository/tree' + privateToken).success(function(file_path_data) {
+      // now look up the raw file content for that sha
+      $http.get(gitLabURL + $routeParams.billId + '/repository/blobs/' + $routeParams.sha + privateToken + "&filepath=" + file_path_data[0].name).success(function(revision_content) {
+        $scope.bill.content = revision_content;
+      })
+      .error(function(content_err) {
+        console.log(content_err)
+      });
+    })
+    .error(function(revision_content_err) {
+      console.log("Error retrieving file content for revision");
+      console.log(revision_content_err);
     });
 
 })
