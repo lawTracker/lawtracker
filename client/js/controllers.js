@@ -90,11 +90,6 @@ angular.module('lawtracker.controllers', [
 .controller('ViewRevisionController',
   function($scope, $http, $routeParams) {
     $scope.bill = {id: $routeParams.billId};
-<<<<<<< HEAD
-=======
-
-    // Get the commit diff info
->>>>>>> origin/master
     $http.get(gitLabURL + $routeParams.billId + '/repository/commits/' + $routeParams.sha + '/diff' + privateToken).success(function(data) {
       $scope.bill.diff = data[0].diff;
     })
