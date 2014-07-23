@@ -29,11 +29,9 @@
 <div class="container" ng-controller="ViewRevisionController">
   <div class="row" id="gray">
     <div class="col-md-10">
-      <! -- main content -->
-      <p>
-        <pre>{{bill.diff}}</pre>
-      </p>
-
+      <!-- main content -->
+      <div hljs language="diff" source="bill.diff">
+      </div> <!-- end hljs -->  
     </div>
     <div class="col-md-2">
       <!-- sidbar content -->
@@ -51,6 +49,5 @@
           <a href="/#/bills/{{bill.id}}/revisions">Revisions</a>
         </li>
       </ul>
-
     </div>
   </div>
