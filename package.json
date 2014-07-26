@@ -24,6 +24,9 @@
   "dependencies": {
     "body-parser": "^1.4.3",
     "express": "^4.6.1",
-    "static": "^2.0.0"
+    "morgan": "latest",
+    "static": "^2.0.0",
+    "shelljs": "latest",
+    "jwt-simple": "latest"
   }
 }

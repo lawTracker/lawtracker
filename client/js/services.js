@@ -4,8 +4,9 @@ angular.module('lawtracker.services', [])
 
   // REMOVE IN PROD
   // var ADMIN = 'AGrAjazL79tTNqJLeABp';
-  // $http.defaults.headers.common['PRIVATE-TOKEN'] = ADMIN; 
+  // $http.defaults.headers.common['PRIVATE-TOKEN'] = ADMIN;
   // /REMOVE IN PROD
+
 
   var user = {}; // closure scope for future access
 
@@ -13,8 +14,9 @@ angular.module('lawtracker.services', [])
     return $http.post(APIURL + '/session', user)
     .then(function (resp) {
       user = resp.data;
-      $http.defaults.headers.common['PRIVATE-TOKEN'] = resp.data.private_token; 
+      $http.defaults.headers.common['PRIVATE-TOKEN'] = resp.data.private_token;
       return resp.data.private_token;
+
     });
   };
 
@@ -25,13 +27,13 @@ angular.module('lawtracker.services', [])
     });
   };
 
-  
+
   var getAllBills = function(cb){
     return $http.get(APIURL + '/projects')
     .then(function(resp) {
       return resp.data;
     });
-  }
+  };
 
   var getAllUsers = function(cb){
     return $http.get(APIURL + '/users')
@@ -53,15 +55,15 @@ angular.module('lawtracker.services', [])
     return $http.get(APIURL + '/projects/' + billId + '/repository/commits')
     .then(function(resp) {
       return resp.data;
-    })
-  }
+    });
+  };
 
   var getBillById = function(billId){
     return $http.get(APIURL + '/projects/' + billId)
     .then(function(resp) {
       return resp.data;
-    })    
-  }
+    })
+  };
 
   var getAllRevisions = function(billId) {
     return $http.get(APIURL + '/projects/' + billId + '/repository/commits')
@@ -90,7 +92,7 @@ angular.module('lawtracker.services', [])
     .then(function(billText) {
       return billText.data;
     })
-  
+
   }
 
   var getRevisionContent = function(billId, revisionId, fileName) {
@@ -102,12 +104,35 @@ angular.module('lawtracker.services', [])
   }
 
   var commit = function(billId, fileContent, fileName, commitMsg){
-    return $http.put(APIURL + '/projects/' + billId + '/repository/files', 
+    return $http.put(APIURL + '/projects/' + billId + '/repository/files',
       {'id': billId, 'content': fileContent, 'file_path': fileName, 'branch_name': 'master', 'commit_message': commitMsg}
     ).then(function(resp){
       return resp.data
     })
-  }
+  };
+
+  var createLocalRepo = function(projectId, filePath, branchName, encoding, fileContent, commitMessage, projectName, username, httpOrigin, sshOrigin) {
+    return $http.post('/api/repositories/create', {"id": projectId, "file_path": filePath, "branch_name": branchName, "encoding": encoding, "content": fileContent, "commit_message": commitMessage, "project_name": projectName, "username": username, "http_origin": httpOrigin, "ssh_origin": sshOrigin})
+    .then(function(resp) {
+      return resp.data;
+    });
+  };
+
+  var createBill = function(billName, billDescription, billContent) {
+    // console.log("Attempting to call createBill");
+    return $http.post(APIURL + '/projects', {"name": billName, "description": billDescription} )
+    .then(function(resp) {
+      var new_project = resp.data;
+      console.log(new_project);
+      // var commitMsg = bill.commitMsg || "Updated at " + Date.now();
+      var commitMsg = "Updated at " + Date.now();
+
+      createLocalRepo(new_project.id, new_project.path, "master", "text", billContent, commitMsg, new_project.path, user.username, new_project.http_url_to_repo, new_project.ssh_url_to_repo)
+      .then(function(resp) {
+        return resp.data;
+      });
+    });
+  };
 
 
   return {
@@ -123,6 +148,8 @@ angular.module('lawtracker.services', [])
     getAllRevisions: getAllRevisions,
     getAllDiffs: getAllDiffs,
     getRevisionContent: getRevisionContent,
-    commit: commit
+    commit: commit,
+    createBill: createBill,
+    createLocalRepo: createLocalRepo
   }
 });

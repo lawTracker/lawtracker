@@ -30,7 +30,7 @@ angular.module('lawtracker.controllers', [
         .catch(function (error) {
           console.error(error); //todo: clear forms
         });
-      
+
     }
   };
 })
@@ -76,7 +76,7 @@ angular.module('lawtracker.controllers', [
     var latestCommitId = commitTree[0].id
     GitLab.getRawLatestCommitData($routeParams.billId, latestCommitId)
     .then(function(rawBillData) {
-      $scope.bill.content = rawBillData;  
+      $scope.bill.content = rawBillData;
     })
   })
 })
@@ -105,26 +105,28 @@ angular.module('lawtracker.controllers', [
   })
 
 })
-.controller('CreateBillController', function($scope, $http, $routeParams, Repository, GitLab) {
-    $scope.bill = {};
-    // Hardcode this for now...once we get login working we should know who
-    // the user is and be able to access info via the api endpoint
-    $scope.user = {username: 'user', id: 1};
-    // we'll take the filename from the form, sanitize it, and use it for
-    // creating the repo
+.controller('CreateBillController', function($scope, $http, $routeParams, GitLab) {
+  $scope.bill = {};
+  // Hardcode this for now...once we get login working we should know who
+  // the user is and be able to access info via the api endpoint
+  $scope.user = {username: 'user', id: 1};
 
-    $scope.master = $scope.bill;
+  $scope.master = $scope.bill;
 
-    $scope.create = function(bill) {
-      $scope.master = angular.copy(bill);
-      Repository.createRepository($scope.user, $scope.bill.filename);
-    };
+  $scope.create = function(bill) {
+    var sanitizedName = $scope.bill.filename.replace(' ', '-');
 
-    $scope.reset = function() {
-      $scope.bill = angular.copy($scope.master);
-    };
+    GitLab.createBill(sanitizedName, $scope.bill.description, $scope.bill.content)
+    .then(function(billData) {
+      $scope.bill = billData;
+    });
+  };
 
-    $scope.reset();
+  $scope.reset = function() {
+    $scope.bill = angular.copy($scope.master);
+  };
+
+  $scope.reset();
 
 })
 .controller('EditBillController', function($scope, $http, $routeParams, GitLab) {
@@ -141,7 +143,7 @@ angular.module('lawtracker.controllers', [
 
     GitLab.getRawLatestCommitData($routeParams.billId, latestCommit.id)
     .then(function(rawBillData) {
-      $scope.bill.content = rawBillData;  
+      $scope.bill.content = rawBillData;
     })
   })
 
@@ -152,7 +154,6 @@ angular.module('lawtracker.controllers', [
 
     GitLab.commit($scope.bill.id, $scope.bill.content, $scope.bill.fileName, commitMsg)
     .then(function(data) {
-      console.log("here's what we got back after trying to edit the file via the web api", data);
       $scope.master = angular.copy(bill);
     })
   };
