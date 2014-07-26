@@ -35,9 +35,22 @@ angular.module('lawtracker.controllers', [
   };
 })
 .controller('DashController', function ($scope, $http, $routeParams, GitLab) {
+  GitLab.getUserAuthenticated().
+  then(function(user){
+    $scope.username = user.username;
+    console.log(user.username, "This is the authenticated user");
+    console.log($scope.username, "This is the user in the scope")
+  })
+  GitLab.getAllUsers()
+  .then(function(users){
+    console.log(users, "these are the users in the dash controller");
+    $scope.users = users;
+    console.log("This should be user", users[0].username);
+    // return users[0].id;
+  })
   GitLab.getAllBills()
   .then(function(bills) {
-    console.log(bills)
+    console.log(bills, "this is the bills object");
     $scope.userBills = bills;
     return bills[0].id
   })

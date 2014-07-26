@@ -33,6 +33,22 @@ angular.module('lawtracker.services', [])
     });
   }
 
+  var getAllUsers = function(cb){
+    return $http.get(APIURL + '/users')
+    .then(function(resp) {
+      console.log("here are my users in getAllUsers", resp.data);
+      return resp.data;
+    });
+  }
+
+  var getUserAuthenticated = function(cb){
+   return $http.get(APIURL + '/user')
+  .then(function(resp) {
+    console.log("here is my authenticated user in getUserAuthenticated", resp.data);
+    return resp.data;
+    });
+  }
+
   var getContributionsForBillId = function(billId) {
     return $http.get(APIURL + '/projects/' + billId + '/repository/commits')
     .then(function(resp) {
@@ -98,6 +114,8 @@ angular.module('lawtracker.services', [])
     signin: signin,
     signup: signup,
     getAllBills: getAllBills,
+    getAllUsers: getAllUsers,
+    getUserAuthenticated: getUserAuthenticated,
     getContributionsForBillId: getContributionsForBillId,
     getBillById: getBillById,
     getBillCommitTree: getBillCommitTree,
