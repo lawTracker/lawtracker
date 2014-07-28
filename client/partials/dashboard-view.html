@@ -44,7 +44,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">Contributions</div>
         <table class="table">
-          <tr ng-repeat="contrib in userContributions"> 
+          <tr ng-repeat="contrib in userContributions| orderBy: 'created_at' | limitTo: 10"> 
             <td class="contribution" ><a href="#/bills/{{billIdForContributions}}/revisions/{{contrib.id}}">{{ contrib.title }}</a></td> 
           </tr>
         </table>
